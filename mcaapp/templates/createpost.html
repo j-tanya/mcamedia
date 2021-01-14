@@ -8,22 +8,23 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Home</title>
+    <title>Sign-Up</title>
     <style>
-      .login:hover{
-        color: aquamarine;
+      .container{
+        width: 50% !important;
+        margin: 0 auto !important; 
+        background-color: rgba(255, 255, 255, 0.555);
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.144);
       }
-      .login{
-        color: #fff;
+      .container h3{
+        padding-top: 10px;
+      }
+      .container form{
+        padding: 5px 10px 40px 10px;
+        padding-bottom: 50px;
       }
       body{
         background-color: #bb9eff;
-      }
-      .card{
-        /* background-color: #bb9eff; */
-        width: 70%;
-        margin: 0 auto;
-        box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.185);
       }
     </style>
   </head>
@@ -70,17 +71,26 @@
         </div>
       </div>
     </nav>
-<div class="text-center mt-4">
-  <div class="card pb-5">
-    <h5 class="card-header">Welcome To LNCT-MCA Media</h5>
-    <div class="card-body">
-      <h5 class="card-title">some text need to add....</h5>
-      <p class="card-text">also here</p>
-     <a href="/" class="btn btn-primary">Go somewhere</a>
+    <div class="container">
+      <h3 class="text-center mt-5 mb-3">Post Create</h3>
+      <form method="POST" class="row g-3">
+        {%csrf_token%}
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Title</label>
+          <input type="text" name="title" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-12">
+          <label for="inputEmail4" class="form-label">Notice</label>
+
+            <div class="form-floating">
+                <textarea class="form-control" name="content"  placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px"></textarea>
+              </div>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-primary" type="submit">Save Post</button>
+        </div>
+      </form>
     </div>
-  </div>
-  
-</div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
